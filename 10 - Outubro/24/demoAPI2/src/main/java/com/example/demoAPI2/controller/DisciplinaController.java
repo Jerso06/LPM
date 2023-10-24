@@ -1,8 +1,8 @@
 package com.example.demoAPI2.controller;
 
 import com.example.demoAPI2.model.Disciplina;
-import com.example.demoAPI2.repository.DisciplinaRepository;
 
+import com.example.demoAPI2.repository.DisciplinaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

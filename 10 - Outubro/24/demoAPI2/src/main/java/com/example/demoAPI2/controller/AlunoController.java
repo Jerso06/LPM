@@ -71,4 +71,22 @@ public class AlunoController {
     {
         return alrepo.findByRaMaiorQue(ra);
     }
+
+    @GetMapping ("/todos/alturamaiorque/{altura}")
+    public List<Aluno> buscarAlturaMaiorQue(@PathVariable("altura") double altura)
+    {
+        return alrepo.findByAlturaMaiorQue(altura);
+    }
+
+    @GetMapping("/todos/nomera/{nome}/{ra}")
+    public List<Aluno> findByNomeRa(@PathVariable("nome") String nome, @PathVariable("ra") int ra)
+    {
+        return alrepo.findByNomeRa(nome,ra);
+    }
+
+    @GetMapping("/todos/nomealtura/{nome}/{altura}")
+    public List<Aluno> findByNomeAltura(@PathVariable("nome") String nome, @PathVariable("altura") double altura)
+    {
+        return alrepo.findByNomeAltura(nome, altura);
+    }
 }
