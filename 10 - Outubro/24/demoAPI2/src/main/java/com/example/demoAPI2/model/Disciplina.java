@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table (name = "disciplina")
+@Table
 public class Disciplina {
 
     @Id
@@ -18,7 +18,7 @@ public class Disciplina {
     @Column
     private int cargaHoraria;
 
-    @Column (length = 2)
+    @Column
     private String sigla;
 
     public int getCod() {

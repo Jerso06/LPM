@@ -65,4 +65,10 @@ public class AlunoController {
     {
         return alrepo.findByParteNome(parteNome);
     }
+
+    @GetMapping ("/todos/ramaiorque/{ra}")
+    public List<Aluno> buscarRaMaiorQue(@PathVariable("ra") int ra)
+    {
+        return alrepo.findByRaMaiorQue(ra);
+    }
 }
