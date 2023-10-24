@@ -69,4 +69,22 @@ public class DisciplinaController {
     {
         discrepo.save(disc);
     }
+
+    @GetMapping("/todos/siglacod/{sigla}/{cod}")
+    public List<Disciplina> buscarPorSiglaCod(@PathVariable("sigla") String sigla, @PathVariable("cod") int cod)
+    {
+        return discrepo.findBySiglaCod(sigla, cod);
+    }
+
+    @GetMapping("/todos/nomecod/{nome}/{cod}")
+    public List<Disciplina> buscarPorNomeCod(@PathVariable("nome") String nome, @PathVariable("cod") int cod)
+    {
+        return discrepo.findByNomeCod(nome, cod);
+    }
+
+    @GetMapping("/todos/siglanome/{sigla}/{nome}")
+    public List<Disciplina> buscarPorSiglaNome(@PathVariable("sigla") String sigla, @PathVariable("nome") String nome)
+    {
+        return discrepo.findBySiglaNome(sigla, nome);
+    }
 }

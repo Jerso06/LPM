@@ -79,13 +79,13 @@ public class AlunoController {
     }
 
     @GetMapping("/todos/nomera/{nome}/{ra}")
-    public List<Aluno> findByNomeRa(@PathVariable("nome") String nome, @PathVariable("ra") int ra)
+    public List<Aluno> buscarPorNomeRa(@PathVariable("nome") String nome, @PathVariable("ra") int ra)
     {
         return alrepo.findByNomeRa(nome,ra);
     }
 
     @GetMapping("/todos/nomealtura/{nome}/{altura}")
-    public List<Aluno> findByNomeAltura(@PathVariable("nome") String nome, @PathVariable("altura") double altura)
+    public List<Aluno> buscarPorNomeAltura(@PathVariable("nome") String nome, @PathVariable("altura") double altura)
     {
         return alrepo.findByNomeAltura(nome, altura);
     }

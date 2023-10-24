@@ -61,4 +61,16 @@ public class ProfessorController {
     {
         profRepo.save(p);
     }
+
+    @GetMapping ("/todos/nomesal/{nome}/{sal}")
+    public List<Professor> buscarPorNomeSal(@PathVariable("nome") String nome, @PathVariable("sal") double sal)
+    {
+        return profRepo.findByNomeSal(nome, sal);
+    }
+
+    @GetMapping ("/todos/nomecod/{nome}/{cod}")
+    public List<Professor> buscarPorNomeCod(@PathVariable("nome") String nome, @PathVariable("cod") int cod)
+    {
+        return profRepo.findByNomeCod(nome, cod);
+    }
 }
