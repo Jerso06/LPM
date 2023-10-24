@@ -59,4 +59,10 @@ public class AlunoController {
     {
         alrepo.save(al);
     }
+
+    @GetMapping("/todos/partenome/{partenome}")
+    public List<Aluno> buscarPorParteNome(@PathVariable("partenome") String parteNome)
+    {
+        return alrepo.findByParteNome(parteNome);
+    }
 }
