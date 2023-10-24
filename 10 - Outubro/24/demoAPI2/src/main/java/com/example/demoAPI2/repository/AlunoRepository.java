@@ -12,6 +12,6 @@ public interface AlunoRepository extends JpaRepository <Aluno, Integer> {
 
     List<Aluno> findByAltura(double altura);
 
-    @Query("select a from Aluno a where.nome like %?1%")
+    @Query("select a from Aluno a where a.nome like %?1%")
     List<Aluno> findByParteNome(String parteNome);
 }
