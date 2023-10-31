@@ -1,5 +1,6 @@
 package com.example.cliProdAPI.controller;
 
+import com.example.cliProdAPI.model.Cliente;
 import com.example.cliProdAPI.repository.ProdutoRepository;
 import com.example.cliProdAPI.model.Produto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,5 +58,21 @@ public class ProdutoController {
         return prodrepo.findByMarcaPrc(marca, prc);
     }
 
+    @DeleteMapping ("/excluir")
+    public void excluirProduto(@RequestBody Produto p)
+    {
+        prodrepo.delete(p);
+    }
 
+    @DeleteMapping ("/excluir/cod/{cod}")
+    public void excluirPorCod(@PathVariable("cod") int cod)
+    {
+        prodrepo.deleteById(cod);
+    }
+
+    @PutMapping ("/atualizar")
+    public void atualizarProduto(@RequestBody Produto p)
+    {
+        prodrepo.save(p);
+    }
 }

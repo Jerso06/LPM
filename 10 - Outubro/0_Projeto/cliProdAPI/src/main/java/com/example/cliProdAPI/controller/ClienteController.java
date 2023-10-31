@@ -50,4 +50,22 @@ public class ClienteController {
     {
         return clrepo.findByNomeEmail(nome, email);
     }
+
+    @DeleteMapping ("/excluir")
+    public void excluirCliente(@RequestBody Cliente cli)
+    {
+        clrepo.delete(cli);
+    }
+
+    @DeleteMapping ("/excluir/cod/{cod}")
+    public void excluirPorCod(@PathVariable("cod") int cod)
+    {
+        clrepo.deleteById(cod);
+    }
+
+    @PutMapping ("/atualizar")
+    public void atualizarCliente(@RequestBody Cliente cli)
+    {
+        clrepo.save(cli);
+    }
 }
